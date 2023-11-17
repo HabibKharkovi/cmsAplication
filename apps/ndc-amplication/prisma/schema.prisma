@@ -1,0 +1,89 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  createdAt DateTime @default(now())
+  firstName String?
+  id        String   @id @default(cuid())
+  lastName  String?
+  password  String
+  roles     Json
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
+
+model LabTest {
+  code          String?
+  comment       String?
+  createdAt     DateTime @default(now())
+  id            String   @id @default(cuid())
+  name          String?
+  price         Float?
+  reportingTime String?
+  updatedAt     DateTime @updatedAt
+}
+
+model TestParameter {
+  code      String?
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  name      String?
+  updatedAt DateTime @updatedAt
+}
+
+model ParameterValue {
+  age         String?
+  ageGroup    String?
+  createdAt   DateTime @default(now())
+  gender      String?
+  id          String   @id @default(cuid())
+  normalRange String?
+  other       String?
+  unit        String?
+  updatedAt   DateTime @updatedAt
+}
+
+model ParameterResult {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+  value     String?
+}
+
+model Patient {
+  age                String?
+  balance            String?
+  cnicNo             String?
+  contactNo          String?
+  createdAt          DateTime @default(now())
+  data               String?
+  discountPercentage String?
+  discountRupees     String?
+  email              String?
+  gender             String?
+  id                 String   @id @default(cuid())
+  mrNo               String?
+  name               String?
+  paid               String?
+  password           String?
+  pinNo              String?
+  referBy            String?
+  time               String?
+  total              String?
+  updatedAt          DateTime @updatedAt
+  username           String?
+}
+
+model Comment {
+  code        String?
+  createdAt   DateTime @default(now())
+  description String?
+  id          String   @id @default(cuid())
+  updatedAt   DateTime @updatedAt
+}

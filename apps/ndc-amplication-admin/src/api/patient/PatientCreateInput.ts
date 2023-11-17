@@ -1,0 +1,20 @@
+export type PatientCreateInput = {
+  age?: string | null;
+  balance?: string | null;
+  cnicNo?: string | null;
+  contactNo?: string | null;
+  data?: string | null;
+  discountPercentage?: string | null;
+  discountRupees?: string | null;
+  email?: string | null;
+  gender?: string | null;
+  mrNo?: string | null;
+  name?: string | null;
+  paid?: string | null;
+  password?: string | null;
+  pinNo?: string | null;
+  referBy?: string | null;
+  time?: string | null;
+  total?: string | null;
+  username?: string | null;
+};
